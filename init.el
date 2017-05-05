@@ -57,6 +57,7 @@ values."
      org
      java
      sql
+     shell
      schmir
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -348,7 +349,7 @@ you should place your code here."
   (global-set-key [f12] 'menu-bar-mode) ;; gimme a quick way to toggle the menu-bar
   (global-set-key [f5] 'spacemacs/helm-project-smart-do-search)
   (global-set-key (kbd "C-x k") 'kill-this-buffer)
-
+  (global-set-key (kbd "C-t") 'spacemacs/shell-pop-eshell)
   (global-set-key [C-tab] 'dabbrev-expand)
   (setq send-mail-function 'message-send-mail-with-sendmail
         message-send-mail-function 'message-send-mail-with-sendmail
@@ -389,7 +390,7 @@ you should place your code here."
  '(column-number-mode t)
  '(package-selected-packages
    (quote
-    (highlight-symbol misc-cmds sequential-command sql-indent company-emacs-eclim eclim yapfify pyvenv pytest pyenv-mode py-isort pip-requirements org-projectile org-present org-plus-contrib org-pomodoro alert log4e gntp org-download mmm-mode markdown-toc markdown-mode live-py-mode hy-mode htmlize helm-pydoc gnuplot gh-md cython-mode company-anaconda anaconda-mode pythonic f volatile-highlights rainbow-delimiters indent-guide highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt column-enforce-mode auto-highlight-symbol adaptive-wrap spaceline powerline popwin neotree hl-todo golden-ratio fill-column-indicator fancy-battery ws-butler hungry-delete expand-region eval-sexp-fu highlight aggressive-indent ag s smartparens unfill mwim helm-company helm-c-yasnippet gitignore-mode gitconfig-mode fuzzy evil-magit magit magit-popup git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete cider spinner queue clojure-mode beacon seq bbdb which-key use-package pcre2el macrostep hydra help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx flx helm-descbinds helm-ag exec-path-from-shell evil-visualstar evil-escape evil goto-chg undo-tree elisp-slime-nav diminish bind-map bind-key auto-compile packed dash ace-window ace-jump-helm-line helm avy helm-core popup async)))
+    (xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help highlight-symbol misc-cmds sequential-command sql-indent company-emacs-eclim eclim yapfify pyvenv pytest pyenv-mode py-isort pip-requirements org-projectile org-present org-plus-contrib org-pomodoro alert log4e gntp org-download mmm-mode markdown-toc markdown-mode live-py-mode hy-mode htmlize helm-pydoc gnuplot gh-md cython-mode company-anaconda anaconda-mode pythonic f volatile-highlights rainbow-delimiters indent-guide highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt column-enforce-mode auto-highlight-symbol adaptive-wrap spaceline powerline popwin neotree hl-todo golden-ratio fill-column-indicator fancy-battery ws-butler hungry-delete expand-region eval-sexp-fu highlight aggressive-indent ag s smartparens unfill mwim helm-company helm-c-yasnippet gitignore-mode gitconfig-mode fuzzy evil-magit magit magit-popup git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete cider spinner queue clojure-mode beacon seq bbdb which-key use-package pcre2el macrostep hydra help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx flx helm-descbinds helm-ag exec-path-from-shell evil-visualstar evil-escape evil goto-chg undo-tree elisp-slime-nav diminish bind-map bind-key auto-compile packed dash ace-window ace-jump-helm-line helm avy helm-core popup async)))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
