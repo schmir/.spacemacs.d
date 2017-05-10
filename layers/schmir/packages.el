@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst schmir-packages
-  '(sequential-command misc-cmds highlight-symbol beacon)
+  '(framemove sequential-command misc-cmds highlight-symbol beacon)
   "The list of Lisp packages required by the schmir layer.
 
 Each entry is either:
@@ -58,6 +58,9 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+(defun schmir/init-framemove ()
+  (use-package framemove
+    :init (setq framemove-hook-into-windmove t)))
 
 (defun schmir/init-sequential-command ()
   (use-package sequential-command
