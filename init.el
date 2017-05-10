@@ -40,6 +40,12 @@ values."
      spacemacs-ui-visual
      spacemacs-editing-visual
      helm
+     (org :packages
+          company
+          htmlize
+          (ob :location elpa)
+          (org :location elpa)
+          (org-agenda :location elpa))
      (clojure :packages
               cider
               clojure-mode
@@ -54,7 +60,6 @@ values."
      python
      ;; git
      markdown
-     org
      java
      sql
      shell
