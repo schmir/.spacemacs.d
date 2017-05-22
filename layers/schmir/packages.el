@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst schmir-packages
-  '(framemove sequential-command misc-cmds highlight-symbol beacon)
+  '(which-func (rosi :location local) framemove sequential-command misc-cmds highlight-symbol beacon)
   "The list of Lisp packages required by the schmir layer.
 
 Each entry is either:
@@ -109,6 +109,25 @@ Each entry is either:
     :config (setq beacon-blink-duration 0.6
                   beacon-size 80)    
     :init (beacon-mode 1)))
+
+(defun schmir/init-which-func ()
+  (use-package which-func
+    :init
+    (which-func-mode 1)))
+
+(defun schmir/init-rosi ()
+  (use-package rosi
+    :commands rosi-mode
+    :mode ("\\.rsf\\|\\.rsi\\'" . rosi-mode)
+    :init (modify-coding-system-alist 'file "\\(\\.rsf\\|\\.msg\\)$" 'cp437)
+    :config
+    (progn
+      (defun schmir/setup-rosi ()
+        (turn-on-highlight-symbol-mode)
+        (abbrev-mode 0)
+        (setq fill-column 140
+              show-trailing-whitespace nil))
+      (add-hook 'rosi-mode-hook 'schmir/setup-rosi))))
 
 (with-eval-after-load 'clojure-mode
   (message "configuring clojure-mode")
