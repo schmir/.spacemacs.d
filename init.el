@@ -323,6 +323,16 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
+  ;; We need the following to make projectile work (i.e. not hang) on windows
+  ;; See https://github.com/bbatsov/projectile/issues/790 
+  (let ((git-usr-bin "c:/Program Files/Git/usr/bin"))
+    (when (and(eq system-type 'windows-nt)
+              (file-exists-p git-usr-bin))
+      (message "Adapting PATH and exec-path. %s" 5)
+      (setenv "PATH" (concat (getenv "PATH") ";" git-usr-bin))
+      (add-to-list 'exec-path git-usr-bin 't)))
+  
   )
 
 (defun dotspacemacs/user-config ()
