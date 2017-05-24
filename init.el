@@ -346,6 +346,7 @@ you should place your code here."
   (defalias 'cc 'cider-connect)
   (defalias 'sbke 'save-buffers-kill-emacs)
   (defalias 'g 'gnus)
+  (defalias 'ee 'eval-expression)
   
   (setq scroll-margin 2
         scroll-step 0
