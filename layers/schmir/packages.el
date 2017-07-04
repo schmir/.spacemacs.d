@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst schmir-packages
-  '(which-func (rosi :location local) framemove sequential-command misc-cmds highlight-symbol beacon)
+  '(which-func (rosi :location local) framemove sequential-command misc-cmds highlight-symbol beacon boxquote)
   "The list of Lisp packages required by the schmir layer.
 
 Each entry is either:
@@ -57,6 +57,9 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun schmir/init-boxquote ()
+  (use-package boxquote))
 
 (defun schmir/init-framemove ()
   (use-package framemove
