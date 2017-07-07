@@ -376,6 +376,7 @@ you should place your code here."
   (global-set-key (kbd "C-x k") 'kill-this-buffer)
   (global-set-key (kbd "C-t") 'spacemacs/shell-pop-eshell)
   (global-set-key [C-tab] 'dabbrev-expand)
+  (global-set-key (kbd "C-x b") 'helm-mini)
   (setq send-mail-function 'message-send-mail-with-sendmail
         message-send-mail-function 'message-send-mail-with-sendmail
 
