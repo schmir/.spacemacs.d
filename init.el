@@ -357,7 +357,9 @@ you should place your code here."
         scroll-step 0
         scroll-conservatively 10000
         scroll-preserve-screen-position 1)
-  
+
+  (setq helm-buffer-max-length nil) ;; show complete buffer name in helm-buffer
+
   (setq create-lockfiles nil
         vc-follow-symlinks t				;; follow symlinks and don't ask
         vc-handled-backends nil)
