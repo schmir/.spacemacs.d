@@ -330,14 +330,14 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
 
   ;; We need the following to make projectile work (i.e. not hang) on windows
-  ;; See https://github.com/bbatsov/projectile/issues/790 
+  ;; See https://github.com/bbatsov/projectile/issues/790
   (let ((git-usr-bin "c:/Program Files/Git/usr/bin"))
     (when (and(eq system-type 'windows-nt)
               (file-exists-p git-usr-bin))
       (message "Adapting PATH and exec-path. %s" 5)
       (setenv "PATH" (concat (getenv "PATH") ";" git-usr-bin))
       (add-to-list 'exec-path git-usr-bin 't)))
-  
+
   )
 
 (defun dotspacemacs/user-config ()
@@ -365,7 +365,7 @@ you should place your code here."
   (setq create-lockfiles nil
         vc-follow-symlinks t				;; follow symlinks and don't ask
         vc-handled-backends nil)
-  
+
   ;; when on a tab, make the cursor the tab length
   (setq-default x-stretch-cursor t)
 
@@ -394,7 +394,7 @@ you should place your code here."
   (add-hook 'clojure-mode-hook 'aggressive-indent-mode)
   (add-hook 'cider-repl-mode-hook 'smartparens-mode)
   (add-hook 'cider-repl-mode-hook 'smartparens-strict-mode)
-  (define-key smartparens-mode-map (kbd "<M-right>") 'sp-forward-slurp-sexp)  
+  (define-key smartparens-mode-map (kbd "<M-right>") 'sp-forward-slurp-sexp)
   (define-key smartparens-mode-map (kbd "<M-left>") 'sp-forward-barf-sexp)
   (define-key smartparens-mode-map (kbd "<C-S-right>") 'sp-forward-sexp)
   (define-key smartparens-mode-map (kbd "<C-S-left>") 'sp-backward-sexp)
