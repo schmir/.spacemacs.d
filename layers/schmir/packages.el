@@ -180,4 +180,10 @@ Each entry is either:
   (define-key cider-mode-map (kbd "H-h") 'cider-doc)
   (define-key cider-repl-mode-map (kbd "H-h") 'cider-doc))
 
+(with-eval-after-load 'recentf
+  (recentf-cleanup))
+
+(with-eval-after-load 'projectile
+  (projectile-cleanup-known-projects))
+
 ;;; packages.el ends here

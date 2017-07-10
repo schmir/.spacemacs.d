@@ -352,7 +352,9 @@ you should place your code here."
   (defalias 'sbke 'save-buffers-kill-emacs)
   (defalias 'g 'gnus)
   (defalias 'ee 'eval-expression)
-  
+
+  (setq recentf-auto-cleanup 60)
+
   (setq scroll-margin 2
         scroll-step 0
         scroll-conservatively 10000
