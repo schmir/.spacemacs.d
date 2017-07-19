@@ -30,7 +30,9 @@
 ;;; Code:
 
 (defconst schmir-packages
-  '(which-func (rosi :location local) framemove sequential-command misc-cmds highlight-symbol beacon boxquote)
+  '(which-func framemove sequential-command misc-cmds highlight-symbol beacon boxquote
+               (rosi :location local)
+               (schmir-auto-save :location local) )
   "The list of Lisp packages required by the schmir layer.
 
 Each entry is either:
@@ -131,6 +133,11 @@ Each entry is either:
         (setq fill-column 140
               show-trailing-whitespace nil))
       (add-hook 'rosi-mode-hook 'schmir/setup-rosi))))
+
+(defun schmir/init-schmir-auto-save ()
+  (use-package schmir-auto-save
+    :commands schmir-save-all-scm-managed-project-buffers
+    :init (add-hook 'focus-out-hook 'schmir-save-all-scm-managed-project-buffers)))
 
 (with-eval-after-load 'clojure-mode
   (message "configuring clojure-mode")
