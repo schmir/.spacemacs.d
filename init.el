@@ -350,6 +350,15 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
+  ;; Mitigate Bug#28350 (security) in Emacs 25.2 and earlier.
+  ;; see http://seclists.org/oss-sec/2017/q3/422
+  (eval-after-load "enriched"
+    '(defun enriched-decode-display-prop (start end &optional param)
+       (list start end)))
+
+
+
   (defalias 'br 'boxquote-region)
   (defalias 'cc 'cider-connect)
   (defalias 'sbke 'save-buffers-kill-emacs)
