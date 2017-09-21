@@ -341,6 +341,12 @@ before packages are loaded. If you are unsure, you should try in setting them in
       (setenv "PATH" (concat (getenv "PATH") ";" git-usr-bin))
       (add-to-list 'exec-path git-usr-bin 't)))
 
+  ;; missing helm-bookmark-map, see
+  ;; https://github.com/syl20bnr/spacemacs/issues/9549
+  (defun dotspacemacs/user-init ()
+    (push '("melpa-stable" . "stable.melpa.org/packages/") configuration-layer--elpa-archives)
+    (push '(helm . "melpa-stable") package-pinned-packages))
+
   )
 
 (defun dotspacemacs/user-config ()
@@ -357,6 +363,7 @@ you should place your code here."
     '(defun enriched-decode-display-prop (start end &optional param)
        (list start end)))
 
+  (require 'helm-bookmark) ;; see above, missing helm-bookmark-map
 
 
   (defalias 'br 'boxquote-region)
