@@ -347,6 +347,16 @@ before packages are loaded. If you are unsure, you should try in setting them in
     (push '("melpa-stable" . "stable.melpa.org/packages/") configuration-layer--elpa-archives)
     (push '(helm . "melpa-stable") package-pinned-packages))
 
+  ;; We need the following to be able to load this init file in a non-windowing
+  ;; system since tool-bar-mode is customized with custom-set-variables at the
+  ;; end of this file.
+  (when (not (fboundp 'tool-bar-mode))
+    (define-minor-mode tool-bar-mode
+      ""
+      :init-value t
+      :global t
+      :variable tool-bar-mode
+      nil))
   )
 
 (defun dotspacemacs/user-config ()
