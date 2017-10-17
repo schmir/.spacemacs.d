@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst schmir-packages
-  '(which-func framemove sequential-command misc-cmds highlight-symbol beacon boxquote
+  '(which-func framemove sequential-command misc-cmds highlight-symbol beacon boxquote solidity-mode
                (rosi :location local)
                (schmir-auto-save :location local) )
   "The list of Lisp packages required by the schmir layer.
@@ -114,6 +114,10 @@ Each entry is either:
     :config (setq beacon-blink-duration 0.6
                   beacon-size 80)    
     :init (beacon-mode 1)))
+
+(defun schmir/init-solidity-mode()
+  (use-package solidity-mode
+    :ensure t))
 
 (defun schmir/init-which-func ()
   (use-package which-func
