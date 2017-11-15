@@ -449,6 +449,7 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
+ '(browse-url-browser-function (quote browse-url-firefox))
  '(column-number-mode t)
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
