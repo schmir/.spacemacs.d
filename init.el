@@ -382,6 +382,13 @@ you should place your code here."
   (defalias 'g 'gnus)
   (defalias 'ee 'eval-expression)
 
+  (setq eclim-executable (expand-file-name "~/opt/eclipse/eclim"))
+  (defun my-java-setup ()
+    (setq show-trailing-whitespace nil)
+    ;; https://stackoverflow.com/questions/6952369/java-mode-argument-indenting-in-emacs
+    (c-set-offset 'arglist-intro '+))
+  (add-hook 'java-mode-hook 'my-java-setup)
+
   (setq recentf-auto-cleanup 60)
 
   (setq scroll-margin 2
