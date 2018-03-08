@@ -30,7 +30,9 @@
 ;;; Code:
 
 (defconst schmir-packages
-  '(which-func framemove sequential-command misc-cmds highlight-symbol beacon boxquote solidity-mode
+  '(which-func sequential-command highlight-symbol beacon boxquote solidity-mode
+               (framemove :location local)
+               (misc-cmds :location local)
                (rosi :location local)
                (schmir-auto-save :location local) )
   "The list of Lisp packages required by the schmir layer.
@@ -85,7 +87,7 @@ Each entry is either:
       (global-set-key [end] 'schmir/end))))
 
 (defun schmir/init-misc-cmds ()
-  (use-package misc-cmds :ensure t
+  (use-package misc-cmds
     :commands (mark-buffer-before-point mark-buffer-after-point)
     :init
     (progn
