@@ -430,7 +430,8 @@ you should place your code here."
   (add-hook 'clojure-mode-hook 'aggressive-indent-mode)
   (add-hook 'cider-repl-mode-hook 'smartparens-mode)
   (add-hook 'cider-repl-mode-hook 'smartparens-strict-mode)
-  (setq cider-pprint-fn 'puget
+  (setq cider-show-eval-spinner nil
+        cider-pprint-fn 'puget
         cider-repl-use-pretty-printing t)
 
   (define-key smartparens-mode-map (kbd "<M-right>") 'sp-forward-slurp-sexp)
