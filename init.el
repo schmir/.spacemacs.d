@@ -2,6 +2,17 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
+(defun schmir-disable-git-rebase-mode ()
+  (setq auto-mode-alist
+        (delete (rassq 'git-rebase-mode auto-mode-alist)
+                auto-mode-alist)))
+
+(eval-after-load "magit-autoloads"
+  '(schmir-disable-git-rebase-mode))
+
+(eval-after-load "git-rebase"
+  '(schmir-disable-git-rebase-mode))
+
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
 You should not put any user code in this function besides modifying the variable
