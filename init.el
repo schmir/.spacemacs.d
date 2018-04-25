@@ -456,10 +456,11 @@ you should place your code here."
   (global-set-key (kbd "C-z") 'undo-tree-undo)
   (global-set-key (kbd "C-S-z") 'undo-tree-redo)
 
-  ;; automatically chmod +x when the file has shebang "#!"
-  (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
+  ;; --- python
+  (add-hook python-mode-hook 'flycheck-mode)
 
-  )
+  ;; automatically chmod +x when the file has shebang "#!"
+  (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
