@@ -459,7 +459,7 @@ you should place your code here."
   (global-set-key (kbd "C-S-z") 'undo-tree-redo)
 
   ;; --- python
-  (add-hook python-mode-hook 'flycheck-mode)
+  (add-hook 'python-mode-hook 'flycheck-mode)
 
   ;; automatically chmod +x when the file has shebang "#!"
   (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p))
