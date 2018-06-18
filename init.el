@@ -467,6 +467,9 @@ you should place your code here."
 
   ;; --- python
   (add-hook 'python-mode-hook 'flycheck-mode)
+  (add-hook 'python-mode-hook
+            (lambda()
+              (define-key python-mode-map (kbd "C-c b") 'black-buffer)))
 
   ;; automatically chmod +x when the file has shebang "#!"
   (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p))
