@@ -2,6 +2,13 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
+(defun black-buffer ()
+  (interactive)
+  (save-excursion
+    (save-buffer)
+    (shell-command (format "black %s" (shell-quote-argument (buffer-file-name))))
+    (revert-buffer t t t)))
+
 (defun schmir-disable-git-rebase-mode ()
   (setq auto-mode-alist
         (delete (rassq 'git-rebase-mode auto-mode-alist)
