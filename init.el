@@ -362,7 +362,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
       (message "Adapting PATH and exec-path. %s" 5)
       (setenv "PATH" (concat (getenv "PATH") ";" git-usr-bin))
       (add-to-list 'exec-path git-usr-bin 't)))
-
+  (eval-after-load "projectile"
+    '(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
   ;; missing helm-bookmark-map, see
   ;; https://github.com/syl20bnr/spacemacs/issues/9549
   (defun dotspacemacs/user-init ()
