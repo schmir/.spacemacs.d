@@ -416,6 +416,14 @@ you should place your code here."
     (c-set-offset 'arglist-intro '+))
   (add-hook 'java-mode-hook 'my-java-setup)
 
+
+  (defun my-solidity-setup ()
+    ;; https://stackoverflow.com/questions/6952369/java-mode-argument-indenting-in-emacs
+    (c-set-offset 'arglist-intro '+)
+    (setq c-basic-offset 4)
+    (setq tab-width 8))
+  (add-hook 'solidity-mode-hook 'my-solidity-setup)
+
   (setq recentf-auto-cleanup 60)
 
   (setq scroll-margin 2
