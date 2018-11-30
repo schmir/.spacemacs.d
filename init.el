@@ -486,6 +486,11 @@ you should place your code here."
   (add-hook 'python-mode-hook 'flycheck-mode)
   (add-hook 'python-mode-hook
             (lambda()
+              (setq flycheck-python-flake8-executable "python3"
+                    flycheck-python-pycompile-executable "python3"
+                    flycheck-python-pylint-executable "python3"
+                    flycheck-python-mypy-executable "python3")
+
               (define-key python-mode-map (kbd "C-c b") 'black-buffer)))
 
   ;; automatically chmod +x when the file has shebang "#!"
