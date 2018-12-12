@@ -412,6 +412,7 @@ you should place your code here."
   (defalias 'sbke 'save-buffers-kill-emacs)
   (defalias 'g 'gnus)
   (defalias 'ee 'eval-expression)
+  (defalias 'rb 'revert-buffer)
 
   (setq eclim-executable (expand-file-name "~/opt/eclipse/eclim"))
   (defun my-java-setup ()
