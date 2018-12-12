@@ -404,6 +404,7 @@ you should place your code here."
        (list start end)))
 
   (require 'helm-bookmark) ;; see above, missing helm-bookmark-map
+  (setq helm-ag-insert-at-point 'symbol)
 
 
   (defalias 'br 'boxquote-region)
